@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "services/node Debug",
+      "type": "node",
+      "request": "attach",
+      "localRoot": "${workspaceFolder}/services/node",
+      "remoteRoot": "/app",
+      "address": "localhost",
+      "port": 9229,
+      "protocol": "inspector"
+    },
+    {
       "name": "services/dotnetcore Debug",
       "type": "coreclr",
       "request": "attach",

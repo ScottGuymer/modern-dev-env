@@ -12,10 +12,11 @@
   "scripts": {
     "test": "jest",
     "start": "node ./src/index.js",
-    "debug": "node --inspect ./src/index.js"
+    "debug": "npx nodemon --inspect=0.0.0.0:9229 ./src/index.js"
   },
   "devDependencies": {
-    "jest": "22.4.4"
+    "jest": "22.4.4",
+    "nodemon": "^2.0.7"
   },
   "dependencies": {
     "axios": "^0.18.0",

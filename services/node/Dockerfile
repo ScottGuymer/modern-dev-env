@@ -1,5 +1,5 @@
 # ---- Base Node ----
-FROM node:10.2.0-alpine AS base
+FROM node:10.2.0-alpine AS build
 
 # set working directory
 WORKDIR /app
@@ -7,9 +7,6 @@ WORKDIR /app
 # copy project file
 COPY package.json package-lock.json ./
  
-#
-# ---- Dependencies ----
-FROM base AS dependencies
 # install node packages
 RUN npm set progress=false && npm config set depth 0
 RUN npm install --only=production 
@@ -21,15 +18,15 @@ RUN npm install
 #
 # ---- Test ----
 # run linters, setup and tests
-FROM dependencies AS test
+FROM build AS test
 COPY . .
 RUN npm run test
  
 #
 # ---- Release ----
-FROM base AS release
+FROM build AS release
 # copy production node_modules
-COPY --from=dependencies /tmp/prod_node_modules ./node_modules
+COPY --from=build /tmp/prod_node_modules ./node_modules
 # copy app sources
 COPY . .
 # expose port and define CMD

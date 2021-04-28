@@ -4,7 +4,6 @@ services:
   dotnetcore:
     build:
       context: services/dotnetcore
-      # dockerfile: services/dotnetcore/Dockerfile
       target: build
     command: dotnet watch --project dotnetcore.csproj run
     volumes:
@@ -23,6 +22,12 @@ services:
       - ./services/python/:/app
 
   node:
+    build:
+      context: services/node
+      target: build
+    command: npm run debug
+    ports:
+      - 9229:9229
     volumes:
       - ./services/node/:/app
       # these are required to exclude these folders from mounting
