@@ -34,4 +34,4 @@ COPY --from=dependencies /tmp/prod_node_modules ./node_modules
 COPY . .
 # expose port and define CMD
 EXPOSE 80
-CMD npm run start
+CMD ["npm", "run", "start"]
