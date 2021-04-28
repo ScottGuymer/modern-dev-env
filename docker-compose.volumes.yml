@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  dotnetcore:
+    build:
+      context: services/dotnetcore
+      # dockerfile: services/dotnetcore/Dockerfile
+      target: build
+    command: dotnet watch --project dotnetcore.csproj run
+    volumes:
+      - ./services/dotnetcore/:/app
+      # these are required to exclude these folders from mounting
+      # they are needed to be local within the container
+      - /app/obj/
+      - /app/bin/
+
+  java:
+    volumes:
+      - ./services/java/:/app
+
+  python:
+    volumes:
+      - ./services/python/:/app
+
+  node:
+    volumes:
+      - ./services/node/:/app
+      # these are required to exclude these folders from mounting
+      # they are needed to be local within the container
+      - /app/node_modules/
