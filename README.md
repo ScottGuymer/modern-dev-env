@@ -17,10 +17,10 @@ docker-compose up
 
 Once everything is running you can see the apps running by going to the following URLs
 
-http://localhost:8001 - dotnetcore
-http://localhost:8002 - java
-http://localhost:8003 - python
-http://localhost:8004 - node
+- http://localhost:8001 - dotnetcore
+- http://localhost:8002 - java
+- http://localhost:8003 - python
+- http://localhost:8004 - node
 
 To make cross service calls you simply append the route of the service you want to call. For example if you wanted to use python to call node you would use
 
