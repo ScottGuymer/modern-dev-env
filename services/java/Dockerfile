@@ -1,10 +1,12 @@
 FROM maven:3.5.3-jdk-10-slim AS build  
 
-COPY src /app/src  
+WORKDIR /app
 
-COPY pom.xml /app  
+COPY src src/  
 
-RUN mvn -f /app/pom.xml clean package
+COPY pom.xml .
+
+RUN mvn -f pom.xml clean package
 
 #----------
 

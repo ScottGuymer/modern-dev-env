@@ -5,6 +5,28 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "services/python Debug",
+      "type": "python",
+      "request": "attach",
+      "port": 8003,
+      "host": "127.0.0.1",
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/services/python",
+          "remoteRoot": "/app"
+        }
+      ]
+    },
+
+    {
+      "type": "java",
+      "name": "services/java Debug",
+      "request": "attach",
+      "hostName": "127.0.0.1",
+      "port": 9009
+    },
+
+    {
       "name": "services/node Debug",
       "type": "node",
       "request": "attach",
