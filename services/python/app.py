@@ -2,10 +2,9 @@ from flask import Flask
 import requests
 from random import randint
 import time
-import os
 import time
 from flask import jsonify
-from flask import Response
+
 
 app = Flask(__name__)
 CONTENT_TYPE_LATEST = str('text/plain; version=0.0.4; charset=utf-8')

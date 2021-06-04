@@ -8,7 +8,7 @@
       "name": "services/python Debug",
       "type": "python",
       "request": "attach",
-      "port": 8003,
+      "port": 5678,
       "host": "127.0.0.1",
       "pathMappings": [
         {
