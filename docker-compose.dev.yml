@@ -5,6 +5,8 @@ services:
     build:
       context: services/dotnetcore
       target: build
+    ports:
+      - '8001:80'
     command: dotnet watch --project dotnetcore.csproj run
     volumes:
       - ./services/dotnetcore/:/app
@@ -19,13 +21,16 @@ services:
       target: build
     entrypoint: mvn spring-boot:run
     ports:
+      - 8002:80
       - 9009:9009
     volumes:
       - ./services/java/:/app
 
   python:
+    build: services/python
     entrypoint: python -m ptvsd --host 0.0.0.0 --port 5678 -m flask run  --host 0.0.0.0 --port 80 --no-reload --with-threads
     ports:
+      - 8003:80
       - 5678:5678
     volumes:
       - ./services/python/:/app
@@ -36,6 +41,7 @@ services:
       target: build
     command: npm run debug
     ports:
+      - 8004:80
       - 9229:9229
     volumes:
       - ./services/node/:/app

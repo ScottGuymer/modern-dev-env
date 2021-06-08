@@ -33,7 +33,7 @@ These applications are functionally identical and written in 4 different languag
 
 ## The next level
 
-Thats all great and gets the apps running. What about when i want to make changes? I need to stop and re-build them all again?
+Thats all great and gets the apps running. What about when I want to make changes? I need to stop and re-build them all again?
 
 To go to the next level we can add in some extra docker compose configuration that allows us to
 
@@ -41,10 +41,10 @@ To go to the next level we can add in some extra docker compose configuration th
 - allow the container to recognise changes and re-compile if needed
 - allow us to attach debuggers to the services
 
-To run this environment we can call multiple docker compose files like this
+To run this environment we use a different docker compose files like this
 
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+docker-compose  -f docker-compose.dev.yml up --build
 ```
 
-If we were not in a demo these would likely be in a single file.
+If we were not in a demo this would likely be the default file.
