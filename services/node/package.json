@@ -20,7 +20,7 @@
   },
   "dependencies": {       
     "axios": "^0.21.3",
-    "koa": "2.13.1",
+    "koa": "2.13.3",
     "koa-route": "^3.2.0",
     "sleep-async": "^1.0.5"
   }
