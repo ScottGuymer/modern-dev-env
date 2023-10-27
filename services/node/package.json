@@ -19,7 +19,7 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {       
-    "axios": "^0.21.4",
+    "axios": "^1.6.0",
     "koa": "2.13.3",
     "koa-route": "^3.2.0",
     "sleep-async": "^1.0.5"
